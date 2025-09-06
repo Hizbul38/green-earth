@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Green Earth</title>
+    <!-- tailwind and daisyui cdn -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 <body>
-    
+    <header>
+        <section>
+            <div class="navbar bg-[#15803D] shadow-sm">
+  <div class="navbar-start">
+    <h2 class=" text-white text-sm md:text-3xl md:ml-15 font-semibold">Green Earth</h2>
+  </div>
+  <div class="navbar-center flex">
+    <ul class="menu menu-horizontal px-1 text-white text-md">
+      <li><a>About</a></li>
+      <li><a>Gallery</a></li>
+      <li><a>Plan a Tree</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <button class=" bg-[#FACC15] text-[#15803d] w-[110px] h-[40px] text-center items-center font-semibold rounded-full md:mr-15">Plan a Tree</button>
+  </div>
+</div>
+</section>
+<section class="relative bg-green-50 py-20 text-center overflow-hidden">
+  <!-- Left Leaf Image -->
+  <img src="assets/hero-leaf1.png" alt="Left Leaf" class="absolute left-0 top-65 md:top-4 w-40 md:w-120"/>
+
+  <!-- Right Leaf Image -->
+  <img src="assets/hero-leaf2.png" class="absolute right-0 top-65 md:top-4 w-40 md:w-120"/>
+
+  <!-- Banner Content -->
+  <div class="relative z-10 max-w-2xl mx-auto px-4">
+    <h1 class="text-3xl md:text-5xl font-bold text-gray-800">
+      Plant a Tree, Grow a Future
+    </h1>
+    <p class="mt-4 text-gray-600 text-base md:text-lg">
+      Join our mission to plant 1 million trees and make the Earth greener for future generations.
+    </p>
+    <button class="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-full transition">
+      Get Involved
+    </button>
+  </div>
+</section>
+
+    </header>
 </body>
 </html>
