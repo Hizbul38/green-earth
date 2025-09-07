@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body>
+<body class="bg-[#f0fdf4]">
     <header>
         <section>
             <div class="navbar bg-[#15803D] shadow-sm">
@@ -28,7 +28,7 @@
   </div>
 </div>
 </section>
-<section class="relative bg-green-50 py-20 text-center overflow-hidden">
+<section class="relative bg-[#cff0dc] py-20 text-center overflow-hidden">
   <!-- Left Leaf Image -->
   <img src="assets/hero-leaf1.png" alt="Left Leaf" class="absolute left-0 top-65 md:top-4 w-40 md:w-120"/>
 
@@ -48,7 +48,23 @@
     </button>
   </div>
 </section>
-
     </header>
+    <main>
+        <h1 class="text-center text-2xl font-semibold mt-10">Choose Your Trees</h1>
+        <section class="mt-5 w-11/12 mx-auto grid grid-cols-12 gap-3 py">
+        <section id="category" class="col-span-1 bg-yellow-200">
+                <!-- <h1 class="text-lg font-semibold">Category</h1> -->
+                <ul id="category-list" class="my-3 text-center">
+                </ul>
+            </section>
+            <section id="card" class="col-span-9 bg-blue-200">
+                <h1>This is card</h1>
+            </section>
+            <section id="cart" class="col-span-2 bg-purple-200">
+                <h1>This is cart</h1>
+            </section>
+            </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
