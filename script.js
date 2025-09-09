@@ -4,7 +4,35 @@ const treeContainer = document.getElementById('treeContainer')
 
 const cartContainer = document.getElementById('cartContainer')
 
+const loadTreeDetail = async (id) =>{
+    const url=`https://openapi.programming-hero.com/api/plant/${id}`
+    const res = await fetch(url)
+    const detail = await res.json()
+    showTreeDetail(detail.plants)
+}
+
+const showTreeDetail = (plant) => {
+    console.log(plant)
+    const detailsContainer = document.getElementById("details-container")
+    detailsContainer.innerHTML = `
+    <div class="">
+        <h1 class="text-xl font-semibold">${plant.name}</h1>
+        </div>
+        <div>
+          <img class="w-[500px] h-[250px]" src="${plant.image}">
+        </div>
+        <div>
+          <p><span class="font-bold">Category: </span>${plant.category} </p>
+        <p><span class="font-bold">Price: </span>${plant.price}</p>
+        <p><span class="font-bold">Description: </span>${plant.description}</p>
+        </div>
+
+    `
+    document.getElementById('my_modal_5').showModal();
+}
+
 let addToCart = []
+
 
 const loadCategory= ()=>{
     fetch("https://openapi.programming-hero.com/api/categories")
@@ -40,7 +68,6 @@ const loadCategory= ()=>{
 }
 
 const loadTreeByCategory = (id) =>{
-// console.log(id)
 fetch(`https://openapi.programming-hero.com/api/category/${id}`)
 .then(res => res.json())
 .then(data => {
@@ -57,13 +84,13 @@ const showTreeByCategory = (plants) => {
         <div>
         <img class="w-[400px] h-[250px]" src="${plant.image}"/>
         </div>
-         <h1 class="text-lg font-semibold mt-2"> ${plant.name} </h1>
+         <h1 onclick="loadTreeDetail(${plant.id})" class="text-lg font-semibold mt-2 cursor-pointer"> ${plant.name} </h1>
          <p class="text-gray-500 mt-2">${plant.description}</p>
          <div class="flex justify-between text-center mt-3">
          <button class="text-lg font-semibold text-green-700 bg-green-100 w-auto h-[30px] rounded-lg">${plant.category}</button>
          <p class="text-lg font-semibold"><i class="fa-solid fa-bangladeshi-taka-sign"></i>${plant.price}</p>
          </div>
-         <button class=" bg-green-600 text-white text-lg font-semibold w-full h-10 rounded-full mt-5">Add to Curt</button>
+         <button class="add-to-cart-btn bg-green-600 text-white text-lg font-semibold w-full h-10 rounded-full mt-5">Add to Curt</button>
         </div>
         `
     })
